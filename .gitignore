@@ -15,8 +15,12 @@ build/
 [Bb]in/
 [Oo]bj/
 
+# Don't include NuGet Packages
+packages/
 # Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
 !packages/*/build/
+# Include dlls if they’re in the NuGet packages directory
+!/packages/*/lib/*.dll
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
