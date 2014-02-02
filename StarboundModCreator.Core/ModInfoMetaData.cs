@@ -7,5 +7,6 @@ namespace StarboundModCreator.Core
         public string Author { get; set; }
         public string Description { get; set; }
         public string Support_Url { get; set; }
+        public string DisplayName { get; set; }
     }
 }

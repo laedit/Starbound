@@ -10,7 +10,13 @@ namespace Research
 
             //PlayerFile.Test();
 
-            Registry.Test();
+            PlayerFile.TestAngryKoalaByEphemerality();
+
+            PlayerFile.TestFuriousKoala();
+
+            //Registry.Test();
+
+            //PakFile.TestRead();
 
             Console.ReadLine();
         }

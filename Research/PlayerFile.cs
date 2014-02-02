@@ -1,11 +1,36 @@
-﻿using System;
+﻿using Newtonsoft.Json.Bson;
+using System;
 using System.IO;
 
 namespace Research
 {
     class PlayerFile
     {
-        public static void Test()
+        public static void TestFuriousKoala()
+        {
+            using (BinaryReader reader = new BinaryReader(File.OpenRead("FuriousKoalaSamples/86bccaf282c9d297191951f754f21120.player")))
+            {
+                var signature = reader.ReadString(6); // SBVJ01
+                var entity = reader.ReadString(); // PlayerEntity
+
+                var version = reader.ReadUInt32(); // BE:16777216 / 1
+                 // 
+                //using (BsonReader breader = new BsonReader(reader))
+                //{
+                //    var signature = breader.ReadAsString();
+                //    var version = breader.ReadAsInt32();
+                //}
+            }
+        }
+
+        public static void TestAngryKoalaByEphemerality()
+        {
+            StarboundEdit.Main world = new StarboundEdit.Main();
+            StarboundEdit.Main.PlayerSaveFile playerSaveFile = world.ReadPlayerSave("AngryKoalaSamples/b089205d214ca0f80b188e52f2859cf2.player");
+
+        }
+
+        public static void TestAngryKoala()
         {
             // .player
             using (BinaryReader reader = new BinaryReader(File.OpenRead("b089205d214ca0f80b188e52f2859cf2.player")))
